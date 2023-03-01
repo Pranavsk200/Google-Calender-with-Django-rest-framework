@@ -23,7 +23,7 @@ API_VERSION = 'v3'
 @api_view(['GET'])
 def GoogleCalendarInitView(request):
     flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
-        CLIENT_SECRETS_FILE, scopes=SCOPES).
+        CLIENT_SECRETS_FILE, scopes=SCOPES)
     flow.redirect_uri = REDIRECT_URL
 
     authorization_url, state = flow.authorization_url(
